@@ -9,10 +9,10 @@ def generate_mesh():
     gmsh.model.add("model")
 
     # Параметры сетки
-    d1 = 50
-    d2 = 60
-    d3 = 100
-    d4 = 60
+    d1 = 100
+    d2 = 100
+    d3 = 200
+    d4 = 120
 
     LX = 0.02
     dy = 0.002
@@ -58,10 +58,10 @@ def generate_mesh():
 
     gmsh.model.addPhysicalGroup(2, [surf1], 1)
     gmsh.model.addPhysicalGroup(2, [surf2], 2)
-    gmsh.model.addPhysicalGroup(1, [line4, line5, line6], 3)
-    gmsh.model.addPhysicalGroup(1, [line1, line2, line3], 4)
-    gmsh.model.addPhysicalGroup(1, [line7, line8, line9], 5)
-    gmsh.model.addPhysicalGroup(1, [line10], 6)
+    gmsh.model.addPhysicalGroup(1, [line1, line2, line3], 1)
+    gmsh.model.addPhysicalGroup(1, [line4, line5, line6], 2)
+    gmsh.model.addPhysicalGroup(1, [line7, line8, line9], 3)
+    gmsh.model.addPhysicalGroup(1, [line10], 4)
 
     gmsh.model.mesh.generate(2)
     gmsh.option.setNumber("Mesh.MshFileVersion", 2.2)
